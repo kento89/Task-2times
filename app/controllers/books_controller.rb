@@ -12,6 +12,7 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
+    # @booklike = Book.find(params[:id])
   end
 
   def create
