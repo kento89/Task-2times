@@ -1,2 +1,6 @@
-$("#comments").html("<%= j(render 'index', {comments: @comment.book.comments}) %>")
-$("textarea").val('')
+$("#comment-delete").html("<%= j(render partial: 'index', locals: {book: @book}) %>");
+$("#count").html("<%= j(render partial: 'book_comments/comment', locals: {book: @book}) %>");
+
+
+$("#comments").html("<%= j(render partial: 'form', locals: {book_comment: @book_comment, book: @book }) %>");
+$(".new-comment").val('');

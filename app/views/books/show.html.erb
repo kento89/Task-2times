@@ -17,7 +17,7 @@
           </td>
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%= @book.body %></td>
-          <td>コメント数：<%= @book.book_comments.count %></td>
+          <td id="count">コメント数：<%= render "book_comments/comment", book: @book %></td>
           <div id="likes_buttons">
             <%= render 'favorites/like', book: @book %>
           </div>
@@ -27,11 +27,11 @@
           <% end %>
         </tr>
       </table>
-      <div id="comments">
+      <div class="pb" id="comment-delete">
         <%= render 'book_comments/index', book: @book %>
       </div>
       
-      <div id="new-comments">
+      <div class="new-comment" id="comments">
         <%= render partial: 'book_comments/form', locals: {book: @book, book_comment: @book_comment} %>
       </div>
       
