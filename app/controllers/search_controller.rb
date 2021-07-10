@@ -7,6 +7,12 @@ class SearchController < ApplicationController
         @datas=search_for(@how,@model,@value)
     end
     
+    def search_carender
+        user=User.find(params[:user_id])
+        date=params[:date].to_date
+        @book_counts=user.bookcount(date)
+    end
+    
     private
     
     def match(model, value)

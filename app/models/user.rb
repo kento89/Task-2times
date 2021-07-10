@@ -31,5 +31,9 @@ class User < ApplicationRecord
  def following?(user)
   followings.include?(user)
  end
+ 
+ def bookcount(date)
+  Book.where(user_id: self.id, create_at: date.all_day).count
+ end
   
 end

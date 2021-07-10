@@ -12,4 +12,9 @@ Rails.application.routes.draw do
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end
+  
+  resource :search, only: [] do
+    get :search_carender, on: :collection
+  end
+  
 end
